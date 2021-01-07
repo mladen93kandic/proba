@@ -9,7 +9,6 @@ const { writeFileSync } = require("fs");
 const { basename } = require("path");
 */
 // GET YOUR API KEY AT https://app.iva-docs.com/auth/register
-initIva("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmY1Yzk5MmU2ODJjMTAwMjkzYzcyZjMiLCJjcmVhdGVkQXQiOjE2MDk5NDYwMzgwNjAsImlhdCI6MTYwOTk0NjAzOH0.xOhHqgwkDLjA4FXF4CD3Rf4O-tvSMYizc1-aHJdLyrs");
 
 app.use(cors());
 app.use(upload());
@@ -18,13 +17,12 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 app.post("/recive", (req, res) => {
     console.log("bbbb");
+    console.log(req);
     console.log(req.body);
-    console.log(req.body.file);
-    const file = req.body.file;
-    const filePath = file;
+    /* const file = req.body.file;
     const uploadpath = __dirname + "/uploads/" + req.body.file;
     console.log(uploadpath)
-        /* file.mv(uploadpath, (err) => {
+        file.mv(uploadpath, (err) => {
              if (err) {
                  console.log("error", err);
                  res.send("error")
